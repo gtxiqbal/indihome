@@ -37,6 +37,8 @@ public class Domain {
     @Size(max = 25)
     private String paket;
 
+    private String test;
+
     @ManyToOne
     @JoinColumn(name = "id_inet", nullable = false)
     private NoInet noInet;
