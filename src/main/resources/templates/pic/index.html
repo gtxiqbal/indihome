@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <title>Data PIC</title>
+</head>
+<body>
+<div class="container-fluid">
+    <h1 th:text="'Data ' + ${page_title}"></h1>
+    <a th:href="@{/add_pic}">+ New</a>
+    <br>
+    <table class="table table-striped table-responsive table-responsive-lg">
+        <thead>
+        <tr>
+            <th>No</th>
+            <th>Nama PIC</th>
+            <th>Aksi</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pic: ${pics}">
+            <td th:text="${pic.id}">No</td>
+            <td th:text="${pic.nama}">Nama PIC</td>
+            <td>
+                <a th:href="@{/edit(id=${pic.id})}">Edit</a> ||
+                <a th:href="@{/hapus(id=${pic.id})}">Hapus</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap4.min.js"></script>
+<script src="js/sweetalert2.js"></script>
+</body>
+</html>
